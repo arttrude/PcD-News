@@ -1,0 +1,560 @@
+/*//////////////GENERAL FORMATATIONS//////////////////*/
+*,
+::before,
+::after{
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+:root{
+    font-size: 62.5%;
+
+    --wrapper-color:rgb(17, 17, 17);
+    --nav-background-color:rgb(8,8,8);
+    --body-font-color:rgb(255, 255, 255);
+    
+    --nav-text-color:hsl(160, 44%, 41%);
+    --nav-hover-link-color:rgb(222,227,73);
+
+    --membership-color-1:#DB9370;
+    --membership-color-2:rgb(176,176, 174);
+    --membership-color-3:#FFD700;
+    
+}
+
+body,
+html{
+    font-size: 1.6rem;
+    color:var(--body-font-color);
+    font-family: 'Cinzel', serif;
+
+    scroll-behavior:smooth;
+
+    background-color: var(--wrapper-color);
+}
+hr{
+    margin-block:2rem 2em;
+    border-radius:100%;
+}
+
+h2{
+    font-size: 5rem;
+    font-family: 'Cormorant SC', serif;
+    text-align: center;
+    width:100%;
+    margin: 0 auto;
+
+    border-bottom: 2px solid var(--nav-text-color);
+    margin-bottom: 6rem;
+
+}
+/* WRAPPER FORMATATION */
+#wrapper{
+    background-color: var(--wrapper-color);
+    width: 100%;
+    height: 100%;
+
+}
+
+/*//////////////NAV/HEADER FORMATATIONS//////////////////*/
+
+header#header,
+nav#nav-bar{
+    position: fixed;
+    top:0;
+
+    padding: 4rem;
+
+    background-color: var(--nav-background-color);
+    
+    width: 100%; 
+    height: clamp(6.8rem,12%,8rem);
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 1)
+    
+}
+
+/* LINKS FORMATATION */
+#nav-bar a.nav-link{
+    color: var(--nav-text-color);
+    
+    display: inline;
+    position: relative;
+
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-decoration: none;
+
+    text-transform: uppercase;
+
+    transition:color .3s ease-in-out;
+
+    margin-inline: 4rem;
+}
+
+/* HOVER EFFECT */
+
+#nav-bar a.nav-link::before{
+    content: '';
+    transform: scaleX(0);
+    transition:transform .3s ease-in-out;
+    
+    position:absolute;
+    top:100%;
+    
+    width: 100%;
+    height: 3px;
+
+    background-color: var(--nav-hover-link-color);
+
+}
+
+#nav-bar a.nav-link:hover{
+    color:var(--nav-hover-link-color);
+}
+
+#nav-bar a.nav-link:hover::before{
+    transform:scaleX(1);
+
+}
+
+header#header img#header-img{
+    height: 22rem;
+
+    padding-block: 6rem;
+
+    object-fit:contain ;
+
+}
+/*//////////////MAIN DOC FORMATATIONS//////////////////*/
+main#main-doc{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    width: 80%;
+    margin: 0 auto;
+
+    margin-top:clamp(6.8rem,12%,8rem);
+    
+    text-align: center;
+}
+
+main#main-doc h1{
+    font-family: 'Cormorant SC', serif;
+    font-size: 4rem;
+    margin-top: 2.5rem;
+}
+
+main#main-doc p{
+    font-size: 2rem;
+    color: var(--nav-text-color);
+
+    margin-top:2.5rem;
+
+}
+
+/*//////////////FORM GENERAL FORMATATIONS//////////////////*/
+
+main#main-doc form#form *{
+    margin-top:3rem;
+    display: block;
+
+    outline: none;
+    border: none;
+
+    border-radius: 0.2rem;
+    
+}
+
+/* EMAIL FORMATATION */
+
+main#main-doc input#email{
+    padding: 1rem;
+    width: 30rem;
+}
+
+main#main-doc input#email:focus{
+    border: 2px solid var(--nav-text-color);
+}
+
+/* SUBMIT BUTTON FORMATATION */
+
+main#main-doc input#submit{
+    width: 15rem;
+    
+    padding:0.5rem;
+    margin: 2.5rem auto 8rem auto;
+
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.8rem;
+    letter-spacing: 0.2rem;
+    font-family: 'cinzel',sans-serif;
+
+    background-color: var(--nav-text-color);
+    color: var(--body-font-color);
+
+}
+
+main#main-doc input#submit:hover{
+    background-color: var(--nav-hover-link-color);
+    color: black;
+    font-weight: bold;
+
+    transition:background-color 600ms ease-in-out,
+                color 600ms ease-in-out;
+}
+
+/*//////////////BENEFITS FORMATATIONS//////////////////*/
+
+section#benefits{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+section#benefits h3{
+    font-size: 3rem;
+    color: var(--nav-text-color);
+    font-family: 'Cormorant SC', serif;
+}
+
+section#benefits p{
+    font-size: 1.6rem;
+    color: var(--body-font-color);
+    text-align: center;
+
+    margin:3rem 0 1.2rem 0;
+}
+
+/*//////////////VIDEO FORMATATIONS//////////////////*/
+iframe{
+    width: clamp(200px,79vw,2000px);
+
+    height:250px;
+    margin: 10rem 0 10rem 0;
+    border: 2px solid var(--nav-text-color);
+}
+
+/*//////////////MEMBERSHIP FORMATATIONS//////////////////*/
+section#membership{
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+
+}
+
+section#membership div.membership-plan{
+    background-color: var(--nav-background-color);
+    
+    height: 45rem;
+
+}
+
+header#membership-header h2{
+    width: 79vw;
+}
+
+section#membership h4{
+    background-color:var(--nav-text-color);
+    box-shadow: 1px 3px 6px black;
+    
+    font-size: 2.5rem;
+    letter-spacing: 0.5rem;
+    text-shadow: 2px 1px 2px  black;
+    
+    padding: 1.6rem;
+}
+
+section#membership h5{
+    font-size: 3.5rem;
+    padding-top: 2rem;
+}
+
+section#membership ul{
+    text-align: left;
+    padding-inline:3rem 1rem;
+    
+}
+
+section#membership button{
+    padding-inline: 3rem;
+    margin-block: 1rem;
+
+    font-family: 'Cormorant SC', serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+
+    border: none;
+    border-radius: 0.2rem;
+
+    background-color: var(--nav-text-color);
+}
+
+section#membership button:hover{
+    background-color:var(--nav-hover-link-color);
+    color: black;
+
+    transition: background-color .4s ease-in-out,
+    color .4s ease-in-out
+}
+
+/* MEMBERSHIP COLOR/CHECK FORMATATION */
+
+section#membership li.check{
+    list-style-type: '✔️';
+    font-size: 1.5rem;
+}
+
+section#membership li.not-checked{
+    list-style-type: '❌';
+    font-size: 1.5rem;
+}
+
+section#membership .bronze h4{
+    color: var(--membership-color-1);
+    border: 3px solid var(--membership-color-1);
+}
+
+section#membership .silver h4{
+    color: var(--membership-color-2);
+    border: 3px solid var(--membership-color-2);
+}
+
+section#membership .gold h4{
+    color: var(--membership-color-3);
+    border: 3px solid var(--membership-color-3);
+}
+
+div.membership-plan:nth-child(1){
+    border: 3px solid var(--membership-color-1)
+}
+
+div.membership-plan:nth-child(2){
+    border: 3px solid var(--membership-color-2);
+}
+
+div.membership-plan:nth-child(3){
+    border: 3px solid var(--membership-color-3);
+}
+
+/*//////////////ABOUT SECTION/////////////////////////*/
+
+section#about{
+    margin: 5rem auto 0 auto;
+    text-align: left;
+}
+
+section#about h3{
+    font-size: 3rem;
+
+    color:var(--nav-text-color);
+}
+
+section#about p{
+    color: var(--body-font-color);
+    font-size: 1.8rem;
+
+    margin-bottom: 5rem;
+}
+
+/*////////////////FOOTER FORMATATION//////////////////*/
+
+footer{
+    background-color: var(--nav-text-color);
+    box-shadow:1px 2px 10px 4px black;
+
+    text-align: center;
+    font-size: 1.6rem;
+    padding-top: 2rem;
+}
+
+footer a{
+    color: black;
+    font-weight: bold;
+    font-size: 2rem;
+
+    text-decoration:none;
+
+    padding-inline:3rem;
+    line-height: 5rem;
+}
+
+footer a:hover{
+    border-bottom: 2px solid white;
+    color: var(--body-font-color);
+    transition: border-bottom .3s ,
+    color .3s ;
+}
+/*////////////////MEDIA QUERYS////////////////////////*/
+
+@media(min-width:1024px){
+        
+    header#header,
+    nav#nav-bar{  
+        padding: 4rem;  
+    }
+
+    /* LINKS FORMATATION */
+    #nav-bar a.nav-link{
+        font-size: 2rem;
+
+        margin-inline: 6rem;
+    }
+
+    iframe{
+        height: 45rem;
+    }
+    
+    section#membership div.membership-plan{
+        background-color: var(--nav-background-color);
+        
+        height: 45rem;
+    }
+    
+    section#membership h4{
+        background-color:var(--nav-text-color);
+        box-shadow: 1px 3px 6px black;
+        
+        font-size: 3rem;
+        letter-spacing: 0.5rem;
+        text-shadow: 2px 1px 2px  black;
+        
+        padding: 1.6rem;
+    }
+    
+    section#membership h5{
+        font-size: 5rem;
+        padding-top: 2rem;
+    }
+    
+    section#membership ul{
+        text-align: left;
+        padding: 1rem 0 0 3rem;
+    }
+
+    section#membership li.check,
+    section#membership li.not-checked{
+        font-size: 1.7rem;
+    }
+    
+}
+
+@media(max-width:794px){
+    header#header,
+    nav#nav-bar{  
+    padding: 4rem;  
+    }
+
+    /* LINKS FORMATATION */
+    #nav-bar a.nav-link{
+    font-size: 1.6rem;
+
+    margin-inline: 2rem;
+    } 
+
+    /* VIDEO FORMATATION */
+
+    iframe{
+        margin-bottom: 6rem;
+        margin-top:6rem;
+    }
+
+
+}
+
+@media(max-width:682px){
+
+    header#header,
+    nav#nav-bar{  
+        padding: 4rem;  
+    }
+
+    /* LINKS FORMATATION */
+    #nav-bar a.nav-link{
+        font-size: 1.6rem;
+
+        margin-inline: 1.2rem;
+    }
+
+    section#membership{
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    section#membership li.check,
+    section#membership li.not-checked{
+        font-size: 1.7rem;
+        padding-block:0.8rem;
+    }
+}
+
+@media(max-width:570px){
+    header#header,
+    nav#nav-bar{  
+        padding: 2rem;  
+    }
+
+    /* LINKS FORMATATION */
+    #nav-bar a.nav-link{
+        font-size: 1.6rem;
+
+        margin-inline: 0.8rem;
+    }
+
+    /* MEMBERSHIP FORMATATION */
+
+    section#membership h5{
+        font-size: 2rem;
+    }
+
+    section#membership li.check,
+    section#membership li.not-checked{
+        font-size: 1.4rem;
+        padding-block:0.8rem;
+    }
+
+}
+
+@media(max-width:498px){
+    
+    header#header,
+    nav#nav-bar{  
+        padding: 1rem;  
+    }
+
+    /* LINKS FORMATATION */
+    #nav-bar a.nav-link{
+        font-size: 1.4rem;
+
+        margin-inline: 0.5rem;
+    }
+
+}
+
+@media(max-width:418px){
+
+    /* LINKS FORMATATION */
+    #nav-bar a.nav-link{
+        font-size: 1.1rem;
+
+    }
+
+
+}
+
+
+
+
+
+
